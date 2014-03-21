@@ -1,0 +1,13 @@
+<header>
+  <div class="row socialbar">
+    <a href="https://twitter.com/keylimedreampie"><i class="fa fa-twitter-square fa-3x"></i></a>
+    <a href="https://www.facebook.com/KeyLimeDreamPie"><i class="fa fa-facebook-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/user/KeyLimeDreamPie/"><i class="fa fa-youtube-square fa-3x"></i></a>
+  </div>
+  <div class="row center logo">
+    <img width="200" src="assets/Logo-KLDP_140228.svg">
+  </div>
+  <div class="row center">
+    <h3 class="valign subhead spaceunderdiv">The Pie You've Been Dreaming About</h3>
+  </div>
+</header>
