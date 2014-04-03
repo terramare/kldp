@@ -3,9 +3,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300,700|Dancing+Script' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <title>Key Lime Dream Pie</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,25 +32,33 @@
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script> -->
     <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="assets/Logo-KLDP_140228.svg">
+      <header>
+        <div class="row socialbar">
+          <a href="https://twitter.com/keylimedreampie"><i class="fa fa-twitter-square fa-3x"></i></a>
+          <a href="https://www.facebook.com/KeyLimeDreamPie"><i class="fa fa-facebook-square fa-3x"></i></a>
+          <a href="https://www.youtube.com/user/KeyLimeDreamPie/"><i class="fa fa-youtube-square fa-3x"></i></a>
         </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-8">
-          <h2>Key Lime Dream Pie</h2>
+        <div class="row center logo">
+          <img width="200" src="assets/Logo-KLDP_140228.svg">
         </div>
+        <div class="row center">
+          <h3 class="valign subhead spaceunderdiv">The Pie You've Been Dreaming About</h3>
+        </div>
+      </header>
+      <div class="row center spaceunderdiv">
+        <iframe width='95%' height='300px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/spheric.map-3au2dpwb/attribution,zoompan,geocoder,share.html'>
+        </iframe>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <iframe id=youTubeEmbed width="640" height="385" src="http://www.youtube.com/embed/videoseries?listType=user_uploads&list=KeyLimeDreamPie&showinfo=1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-          <a class="twitter-timeline" data-dnt="true" width="300" height="500" href="https://twitter.com/KeyLimeDreamPie" data-widget-id="444235464862494720">Tweets by @KeyLimeDreamPie</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
+      <div class="row center spaceunderdiv">
+        <iframe id="youTubeEmbed" width="384" height="216" src="http://www.youtube.com/embed?enablejsapi=1&listType=user_uploads&list=KeyLimeDreamPie&showinfo=1&origin=http://www.keylimedreampie.com&index=0" frameborder="0">
+        </iframe>
       </div>
+      <div class="row center spaceunderdiv">
+        <a class="twitter-timeline" data-dnt="true" width="300" height="500" href="https://twitter.com/KeyLimeDreamPie" data-widget-id="444235464862494720">Tweets by @KeyLimeDreamPie</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          </script>
+      </div>
+      <footer class="center">©2014 Key Lime Dream Pie</footer>
     </div>
   </body>
 </html>
