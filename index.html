@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/sss.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,9 +20,11 @@
   </head>
   <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/tabletop.js"></script>
+    <script src="js/sheetsee.js"></script>
     <!--       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -45,9 +48,30 @@
           <h3 class="valign subhead spaceunderdiv">The Pie You've Been Dreaming About</h3>
         </div>
       </header>
-      <div class="row center spaceunderdiv">
-        <iframe width='95%' height='300px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/spheric.map-3au2dpwb/attribution,zoompan,geocoder,share.html'>
-        </iframe>
+      <div id="map" class="row center spaceunderdiv">
+            <!-- <iframe width='95%' height='300px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/spheric.map-3au2dpwb/attribution,zoompan,geocoder,share.html'>
+        </iframe> -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var gData;
+            var URL = "0AmpYqzYhzPB3dGxFNnlBenNRY0tjOTFuX0N2NURYemc";
+            Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+          });
+  
+          function showInfo(data) {
+            gData = data;
+            /*
+            var optionsJSON = ["name", "street_address", "city", "state", "zip_code", "notes"];
+            var template = "<ul><li>{{name}}</li>
+                            <li>{{street_address}}</li><ul>";
+            var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON);
+          */
+            var map = Sheetsee.loadMap("map");
+            Sheetsee.addTileLayer(map, 'spheric.map-3au2dpwb');
+          /*   var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, template) */
+            console.log(gData);
+          }
+        </script>
       </div>
       <div class="row center spaceunderdiv">
         <iframe id="youTubeEmbed" width="384" height="216" src="http://www.youtube.com/embed?enablejsapi=1&listType=user_uploads&list=KeyLimeDreamPie&showinfo=1&origin=http://www.keylimedreampie.com&index=0" frameborder="0">
