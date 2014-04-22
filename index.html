@@ -48,6 +48,7 @@
       </header>
       <div class="row spaceunderdiv" id="map">
         <script>
+/*           var marker; */
           var map = L.mapbox.map("map", "spheric.map-3au2dpwb", {
             scrollWheelZoom: false
           });
@@ -61,11 +62,25 @@
           $.getJSON("assets/kldp_locations.geojson", function(data) {
             var geojson = L.geoJson(data, {
               pointToLayer: function (feature, latlng) {
-                return L.marker(latlng, {icon: pieIcon});
+                marker = L.marker(latlng, {icon: pieIcon});
+                return marker;
+              },
+              onEachFeature: function (feature, layer) {
+                var content = '<h2>' + feature.properties.name + '<\/h2>' + feature.properties.streetaddress + '<br />' + feature.properties.city + ', ' + feature.properties.state + ', ' + feature.properties.zipcode;
+                layer.bindPopup(content);
               }
             });
+            
             map.fitBounds(geojson.getBounds());
             geojson.addTo(map);
+            console.log(geojson);
+            console.log("marker:", marker);
+            /*
+map.on('popupopen', function(e) {
+              var popup = e.setContent("Hello");
+              return popup;
+            });
+            marker.bindPopup(content).openPopup(); */
           });
         </script>
       </div>
