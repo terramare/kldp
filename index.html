@@ -3,13 +3,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/favicon.png"/>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300,700|Dancing+Script' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <title>Key Lime Dream Pie</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" />
     <link rel="stylesheet" type="text/css" href="css/site.css" />
-    <link rel="stylesheet" type="text/css" href="css/sss.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,14 +18,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="js/tabletop.js"></script>
-    <script src="js/sheetsee.js"></script>
     <!--       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -48,29 +46,27 @@
           <h3 class="valign subhead spaceunderdiv">The Pie You've Been Dreaming About</h3>
         </div>
       </header>
-      <div id="map" class="row center spaceunderdiv">
-            <!-- <iframe width='95%' height='300px' frameBorder='0' src='http://a.tiles.mapbox.com/v3/spheric.map-3au2dpwb/attribution,zoompan,geocoder,share.html'>
-        </iframe> -->
+      <div class="row spaceunderdiv" id="map">
         <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var gData;
-            var URL = "0AmpYqzYhzPB3dGxFNnlBenNRY0tjOTFuX0N2NURYemc";
-            Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+          var map = L.mapbox.map("map", "spheric.map-3au2dpwb", {
+            scrollWheelZoom: false
           });
-  
-          function showInfo(data) {
-            gData = data;
-            /*
-            var optionsJSON = ["name", "street_address", "city", "state", "zip_code", "notes"];
-            var template = "<ul><li>{{name}}</li>
-                            <li>{{street_address}}</li><ul>";
-            var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON);
-          */
-            var map = Sheetsee.loadMap("map");
-            Sheetsee.addTileLayer(map, 'spheric.map-3au2dpwb');
-          /*   var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, template) */
-            console.log(gData);
-          }
+
+          var pieIcon = L.icon({
+            iconUrl: "./assets/icon.png",
+            iconSize: [65, 40],
+            iconAnchor: [32, 40],
+            popupAnchor: [0, -40]
+          });
+          $.getJSON("assets/kldp_locations.geojson", function(data) {
+            var geojson = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {icon: pieIcon});
+              }
+            });
+            map.fitBounds(geojson.getBounds());
+            geojson.addTo(map);
+          });
         </script>
       </div>
       <div class="row center spaceunderdiv">
@@ -78,9 +74,8 @@
         </iframe>
       </div>
       <div class="row center spaceunderdiv">
-        <a class="twitter-timeline" data-dnt="true" width="300" height="500" href="https://twitter.com/KeyLimeDreamPie" data-widget-id="444235464862494720">Tweets by @KeyLimeDreamPie</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-          </script>
+        <a class="twitter-timeline" data-dnt="true" width="384" height="500" href="https://twitter.com/KeyLimeDreamPie" data-widget-id="444235464862494720">Tweets by @KeyLimeDreamPie</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       <footer class="center">©2014 Key Lime Dream Pie</footer>
     </div>
