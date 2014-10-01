@@ -9,7 +9,7 @@
     <title>Key Lime Dream Pie</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" />
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css" />
     <link rel="stylesheet" type="text/css" href="css/site.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,7 +18,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+    <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
@@ -48,16 +48,16 @@
       </header>
       <div class="row spaceunderdiv" id="map">
         <script>
-/*           var marker; */
           var map = L.mapbox.map("map", "spheric.map-3au2dpwb", {
+            accessToken: 'pk.eyJ1Ijoic3BoZXJpYyIsImEiOiJrekZETjg0In0.z_QInVnzPR9Fwd94OOBNtQ',
             scrollWheelZoom: false
           });
 
           var pieIcon = L.icon({
             iconUrl: "./assets/KLDPmappin.png",
-            iconSize: [60, 58],
-            iconAnchor: [30, 58],
-            popupAnchor: [0, -58]
+            iconSize: [30, 29],
+            iconAnchor: [15, 29],
+            popupAnchor: [0, -29]
           });
           $.getJSON("assets/kldp_locations.geojson", function(data) {
             var geojson = L.geoJson(data, {
@@ -70,17 +70,8 @@
                 layer.bindPopup(content);
               }
             });
-            
-            map.fitBounds(geojson.getBounds(), {padding: [35, 35]} );
+            map.fitBounds(geojson.getBounds(), {padding: [10, 10]} );
             geojson.addTo(map);
-            console.log(geojson);
-            console.log("marker:", marker);
-            /*
-map.on('popupopen', function(e) {
-              var popup = e.setContent("Hello");
-              return popup;
-            });
-            marker.bindPopup(content).openPopup(); */
           });
         </script>
       </div>
