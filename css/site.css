@@ -1,79 +1,82 @@
+* {
+  margin: 0;
+}
+
+html,body {
+  height: 100%;
+}
+
 body {
-/*
-  border-top-style: solid;
-  border-top-color: #C1D731;
-  border-top-width: 12px;
-*/
-  z-index: -1;
-  background-color: #C1D731;
-  
-}
-
-.container {
-  background-color: whitesmoke;
-}
-
-.center {
-  text-align: center;
-}
-
-.logo {
-  padding-top: -20px;
-  padding-left: 130px;
-}
-
-.headerpadding {
-  padding-bottom: 40px;
-}
-
-.spaceunderdiv {
-  margin-bottom: 30px;
-}
-
-.heading {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-}
-
-.subhead {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  text-shadow: 4px 4px 4px #aaa;
-  padding-bottom: 30px;
-}
-
-.valign {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-}
-
-.socialbar {
-  float: right;
-  color: #47239B;
-  padding-top: 10px;
-  padding-right: 20px;
+  background: url('../assets/background.jpg');
+  background-repeat: repeat;
 }
 
 #map {
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
-  height: 400px;
-  border-style: ridge;
-  border-color: #faf8b7;
+  width: 100%;
+  height: 330px;
 }
 
-footer {
-  box-shadow: 0px -7px 7px -7px #333;
-  font-size: 75%;
-  padding: 8px;
+.social-icons {
+  position: relative;
+/*   text-align: center; */
 }
-/*
-.colorbar {
-  box-shadow:
-    0 0 0 3px #47239B,
-    0 0 0 12px #C1D731;
+
+#facebook {
+  position: absolute;
+  width: 151px;
+  height: 135px;
+  background: url('../assets/social-sprites.png') no-repeat 0 0;
+  bottom: 0;
 }
-*/
+
+#facebook:hover { background-position: -155px 0px }
+
+#twitter {
+  position: absolute;
+  width: 102px;
+  height: 90px;
+  background: url('../assets/twitter-hover.png') no-repeat 0 0;
+  background-size: cover;
+  bottom: 0;
+/*   right 0; */
+}
+
+#logosocialrow {
+  position: absolute;
+  width: 140px;
+  height: 122px;
+  background: url('../assets/KLDPlogo.png') no-repeat;
+  background-size: 100%;
+  bottom: 0;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -40px;
+}
+
+#push,
+#footer {
+  height: 40px;
+}
+
+#footer {
+  background-color: #F1F3DF;
+  line-height: 40px;
+  text-align: center;
+  font-size: .8em;
+}
+
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
