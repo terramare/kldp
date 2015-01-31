@@ -17,67 +17,65 @@ body {
   height: 420px;
 }
 
-.social-icons {
-/*
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  background-position: center center;
-*/
+#logosocialrow {
+  height: 320px;
+  width: 320px;
+  background: url('../assets/KLDPlogo-new.png') no-repeat center center;
+  background-size: 320px auto;
+}
+
+#logosocialrow:hover {
+  height: 320px;
+  background: url('../assets/slice2.png') no-repeat center center;
+  background-size: 320px auto;
 }
 
 #facebook {
-  height: 240px;
-  background: url('../assets/fb.png') no-repeat center center;
-  background-size: 113px 101px;
+  height: 100px;
+  width: 112px;
+  background: url('../assets/facebook-sprite.png') center top no-repeat;
+  background-size: 112px auto;
 }
 
 #facebook:hover {
-  height: 240px;
-  background: url('../assets/facebook-hover.png') no-repeat center center;
-  background-size: 113px 101px;
+  background-position: center bottom;
+  background-size: 112px auto;
 }
 
 #twitter {
-  height: 240px;
-  background: url('../assets/twitter.png') no-repeat center center;
-  background-size: 112px 100px;
+  height: 100px;
+  width: 112px;
+  background: url('../assets/twitter-sprite.png') center top no-repeat;
+  background-size: 112px auto;
 }
 
 #twitter:hover {
-  height: 240px;
-  background: url('../assets/twitter-hover.png') no-repeat center center;
-  background-size: 112px 100px;
-}
-
-#logosocialrow {
-  height: 240px;
-  background: url('../assets/KLDPlogo.png') no-repeat center center;
-  background-size: 240px auto;
+  background-position: center bottom;
+  background-size: 112px auto;
 }
 
 #youtube {
-  height: 240px;
-  background: url('../assets/youtube.png') no-repeat center center;
-  background-size: 112px 100px;
+  height: 100px;
+  width: 112px;
+  background: url('../assets/youtube-sprite.png') center top no-repeat;
+  background-size: 112px auto;
 }
 
 #youtube:hover {
-  height: 240px;
-  background: url('../assets/youtube-hover.png') no-repeat center center;
-  background-size: 112px 100px;
+  background-position: center bottom;
+  background-size: 112px auto;
 }
 
-#tumblr {
-  height: 240px;
-  background: url('../assets/tumblr.png') no-repeat center center;
-  background-size: 112px 100px;
+#instagram {
+  height: 100px;
+  width: 112px;
+  background: url('../assets/instagram-sprite.png') center top no-repeat;
+  background-size: 112px auto;
 }
 
-#tumblr:hover {
-  height: 240px;
-  background: url('../assets/tumblr-hover.png') no-repeat center center;
-  background-size: 112px 100px;
+#instagram:hover {
+  background-position: center bottom;
+  background-size: 112px auto;
 }
 
 #wrap {
@@ -97,7 +95,10 @@ body {
   background-color: #F1F3DF;
   line-height: 40px;
   text-align: center;
-  font-size: .8em;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  color: #986B2E;
+  font-size: 1.1em;
 }
 
 .voffset  { margin-top: 2px; }
