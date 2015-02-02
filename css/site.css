@@ -18,16 +18,17 @@ body {
 }
 
 #logosocialrow {
-  height: 320px;
+  height: 263px;
   width: 320px;
-  background: url('../assets/KLDPlogo-new.png') no-repeat center center;
-  background-size: 320px auto;
+  background: url('../assets/KLDPlogo.png') no-repeat center center;
+  background-size: 320px 263px;
 }
 
 #logosocialrow:hover {
-  height: 320px;
+  height: 263px;
+  width:320px;
   background: url('../assets/slice2.png') no-repeat center center;
-  background-size: 320px auto;
+  background-size: 320px 263px;
 }
 
 #facebook {
