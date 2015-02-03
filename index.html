@@ -36,13 +36,15 @@
         <script>
           var map = L.mapbox.map("map", "spheric.map-3au2dpwb", {
             accessToken: 'pk.eyJ1Ijoic3BoZXJpYyIsImEiOiJrekZETjg0In0.z_QInVnzPR9Fwd94OOBNtQ',
+            center: [40.639, -74.064],
+            zoom: 11,
             scrollWheelZoom: false
           });
           var pieIcon = L.icon({
             iconUrl: "./assets/KLDPmappin.png",
-            iconSize: [30, 29],
-            iconAnchor: [15, 29],
-            popupAnchor: [0, -29]
+            iconSize: [60, 58],
+            iconAnchor: [30, 58],
+            popupAnchor: [0, -58]
           });
           $.getJSON("assets/kldp_locations.geojson", function(data) {
             var geojson = L.geoJson(data, {
@@ -55,7 +57,7 @@
                 layer.bindPopup(content);
               }
             });
-            map.fitBounds(geojson.getBounds(), {padding: [10, 10]} );
+//             map.fitBounds(geojson.getBounds(), {padding: [10, 10]} );
             geojson.addTo(map);
           });
         </script>
@@ -78,24 +80,23 @@
         </div>
       </div>
       
-      <div class="row voffset4">
-        <div class="col-sm-3 voffset3">
+      <div class="row voffset5">
+        <div class="col-sm-2 col-sm-offset-2 voffset3">
           <a href="https://www.facebook.com/KeyLimeDreamPie" target="_blank">
             <div class="center-block" id="facebook"></div>
           </a>
         </div>
-        <div class="col-sm-3 voffset3">
+        <div class="col-sm-2 col-sm-offset-1 voffset3">
           <a href="https://twitter.com/KeyLimeDreamPie" target="_blank">
             <div class="center-block" id="twitter"></div>
           </a>
         </div>
-        <div class="col-sm-3 voffset3">
+        <div class="col-sm-2 col-sm-offset-1 voffset3">
           <a href="https://www.youtube.com/user/KeyLimeDreamPie" target="_blank">
             <div class="center-block" id="youtube"></div>
           </a>
         </div>
-        <div class="col-sm-3 voffset3">
-          <div class="center-block" id="instagram"></div>
+        <div class="col-sm-2 voffset3">
         </div>
       </div>
     </div>

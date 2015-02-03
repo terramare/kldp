@@ -1,1 +1,25 @@
-{"features":[{"id":"1650 Hylan Blvd","properties":{"streetaddress":"1650 Hylan Blvd","name":"Pasticceria Bruno","zipcode":"","state":"NY","geo_longitude":-74.090148,"geo_latitude":40.58824,"city":"Staten Island"},"type":"Feature","geometry":{"type":"Point","coordinates":[-74.090148,40.58824]}},{"id":"506 Laguardia Place","properties":{"streetaddress":"506 Laguardia Place","name":"Pasticceria Bruno","zipcode":"","state":"NY","geo_longitude":-73.99947,"geo_latitude":40.72794,"city":"Manhattan"},"type":"Feature","geometry":{"type":"Point","coordinates":[-73.99947,40.72794]}},{"id":"4401 Dell Avenue","properties":{"streetaddress":"4401 Dell Avenue","name":"A. Oliveri and Sons","zipcode":"","state":"NJ","geo_longitude":-74.036204,"geo_latitude":40.78438,"city":"North Bergen"},"type":"Feature","geometry":{"type":"Point","coordinates":[-74.036204,40.78438]}}],"type":"FeatureCollection"}
+{
+  "features": [
+    {
+      "id": "1650 Hylan Blvd",
+      "properties": {
+        "streetaddress": "1650 Hylan Blvd",
+        "name": "Pasticceria Bruno",
+        "zipcode": "10305",
+        "state": "NY",
+        "geo_longitude": -74.090148,
+        "geo_latitude": 40.58824,
+        "city": "Staten Island"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.090148,
+          40.58824
+        ]
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}
